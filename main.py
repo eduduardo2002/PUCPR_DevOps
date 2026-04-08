@@ -8,6 +8,6 @@ def ckeck_conexion():
         return False
 
 if ckeck_conexion():
-    print("Conexion OK")
+    print("Com conexão")
 else:
-    print("Conexion invalid")
+    print("Sem conexão")
