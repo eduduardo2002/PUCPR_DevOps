@@ -1,0 +1,30 @@
+name: continuous delivery
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version
+
+    - name: Simulando Continuous Delivery
+      uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: |
+          '**.py'
+          README.md
+          
